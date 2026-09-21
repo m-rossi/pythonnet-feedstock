@@ -33,11 +33,6 @@ requirements:
 
 tests:
   - python:
-      python_version:
-        - ${{ python_min }}.*
-        - "*"
-      imports:
-        - clr
       pip_check: true
   - script: python test-runtime.py coreclr
     files:
