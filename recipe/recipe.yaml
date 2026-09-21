@@ -29,9 +29,7 @@ requirements:
     - python >=${{ python_min }},<3.16
   run_constraints:
     - dotnet-runtime >=3.1
-    - if: not win
-      then:
-        - mono >=6.12
+    - mono >=6.12
 
 tests:
   - python:
@@ -68,6 +66,7 @@ about:
   homepage: http://pythonnet.github.io
   summary: '.Net and Mono integration for Python'
   license: MIT
+  license_file: LICENSE
   documentation: https://pythonnet.github.io/pythonnet/
   repository: https://github.com/pythonnet/pythonnet
 
