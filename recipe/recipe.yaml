@@ -36,7 +36,7 @@ tests:
       pip_check: true
   - script: python test-runtime.py coreclr
     files:
-      source:
+      recipe:
         - test-runtime.py
     requirements:
       run:
@@ -45,13 +45,13 @@ tests:
     then:
       script: python test-runtime.py netfx
       files:
-        source:
+        recipe:
           - test-runtime.py
   - if: not win
     then:
       script: python test-runtime.py mono
       files:
-        source:
+        recipe:
           - test-runtime.py
       requirements:
         run:
