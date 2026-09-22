@@ -29,7 +29,12 @@ requirements:
     - python >=${{ python_min }},<3.16
   run_constraints:
     - dotnet-runtime >=3.1
-    - mono >=6.12
+    - if: unix
+      then:
+        - __unix
+        - mono >=6.12
+      else:
+        - __win
 
 tests:
   - python:
