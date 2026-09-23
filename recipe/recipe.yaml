@@ -11,7 +11,11 @@ source:
 
 build:
   noarch: python
-  script: python -m pip install . -vv
+  script:
+    # dotnet build-server keeps file handles open on Windows, causing "Access is denied"
+    # errors when rattler-build tries to clean up the build folder afterwards.
+    - python -m pip install . -vv
+    - dotnet build-server shutdown
   number: 0
 
 requirements:
